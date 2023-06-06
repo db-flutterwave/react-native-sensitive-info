@@ -1,0 +1,43 @@
+{
+  "name": "react-native-sensitive-info",
+  "version": "6.0.0-alpha.9",
+  "main": "build/index.js",
+  "module": "build/index.es.js",
+  "jsnext:main": "build/index.es.js",
+  "types": "index.d.ts",
+  "description": "react-native-sensitive-info manages all data stored in Android Shared Preferences and iOS Keychain. You can set, get and delete keys/values using simple methods.",
+  "scripts": {
+    "build": "rimraf -rf build && rollup -c",
+    "prepublishOnly": "yarn build",
+    "localPublish": "yalc publish && cd example && yalc add react-native-sensitive-info --yarn && cd .."
+  },
+  "author": {
+    "name": "mCodex & ClassApp",
+    "email": "mtw.andrade@gmail.com"
+  },
+  "contributors": [
+    "Mateus Andrade mtw.andrade@gmail.com",
+    "Samin Shams <samin@classapp.co>"
+  ],
+  "homepage": "https://mcodex.dev/react-native-sensitive-info/",
+  "bugs": {
+    "url": "https://github.com/mcodex/react-native-sensitive-info/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mcodex/react-native-sensitive-info.git"
+  },
+  "keywords": [
+    "android",
+    "ios",
+    "keychain",
+    "shared-preferences",
+    "react-native",
+    "windows"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "react-native": "*"
+  },
+  "yalcSig": "273411c29a5953dadaff6ee8bf48ba74"
+}
