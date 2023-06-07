@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'org.jetbrains.kotlin.android'
 
 def DEFAULT_COMPILE_SDK_VERSION             = 29
-def DEFAULT_BUILD_TOOLS_VERSION             = "29.0.2"
+def DEFAULT_BUILD_TOOLS_VERSION             = "30.0.2"
 def DEFAULT_TARGET_SDK_VERSION              = 29
 def DEFAULT_MIN_SDK_VERSION                 = 23
 
@@ -14,7 +14,7 @@ buildscript {
         google() //in newer versions of Android Studio
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.2'
+        classpath 'com.android.tools.build:gradle:7.3.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -37,17 +37,17 @@ android {
     }
 }
 
+def REACT_NATIVE_VERSION = new File(['node', '--print',"JSON.parse(require('fs').readFileSync(require.resolve('react-native/package.json'), 'utf-8')).version"].execute(null, rootDir).text.trim())
+
 allprojects {
     repositories {
-        maven { url "$rootDir/../node_modules/react-native/android" } // All of React Native (JS, Android binaries) is installed from npm
         mavenCentral()
         google()
     }
 }
 dependencies {
     implementation 'androidx.biometric:biometric:1.1.0'
-    implementation 'com.facebook.react:react-native:+'
+    implementation "com.facebook.react:react-android:$REACT_NATIVE_VERSION"
     implementation 'androidx.core:core-ktx:1.10.1'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
 }
