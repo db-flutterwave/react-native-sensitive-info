@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF8FCF981BFFB184000FCD37 /* RNSensitiveInfo.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF8FCF971BFFB184000FCD37 /* RNSensitiveInfo.h */; };
-		BF8FCF9A1BFFB184000FCD37 /* RNSensitiveInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8FCF991BFFB184000FCD37 /* RNSensitiveInfo.m */; };
+		370A42292A29DD1B004F942C /* RNSensitiveInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370A42282A29DD1B004F942C /* RNSensitiveInfo.swift */; };
+		37C28AC82A2FD3E200408F59 /* RNSensitiveInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C28AC72A2FD3E200408F59 /* RNSensitiveInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -18,16 +18,16 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				BF8FCF981BFFB184000FCD37 /* RNSensitiveInfo.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		370A42272A29DD1A004F942C /* RNSensitiveInfo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNSensitiveInfo-Bridging-Header.h"; sourceTree = "<group>"; };
+		370A42282A29DD1B004F942C /* RNSensitiveInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNSensitiveInfo.swift; sourceTree = "<group>"; };
+		37C28AC72A2FD3E200408F59 /* RNSensitiveInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNSensitiveInfo.m; sourceTree = "<group>"; };
 		BF8FCF941BFFB184000FCD37 /* libRNSensitiveInfo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNSensitiveInfo.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF8FCF971BFFB184000FCD37 /* RNSensitiveInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNSensitiveInfo.h; sourceTree = "<group>"; };
-		BF8FCF991BFFB184000FCD37 /* RNSensitiveInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNSensitiveInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +60,9 @@
 		BF8FCF961BFFB184000FCD37 /* RNSensitiveInfo */ = {
 			isa = PBXGroup;
 			children = (
-				BF8FCF971BFFB184000FCD37 /* RNSensitiveInfo.h */,
-				BF8FCF991BFFB184000FCD37 /* RNSensitiveInfo.m */,
+				370A42282A29DD1B004F942C /* RNSensitiveInfo.swift */,
+				370A42272A29DD1A004F942C /* RNSensitiveInfo-Bridging-Header.h */,
+				37C28AC72A2FD3E200408F59 /* RNSensitiveInfo.m */,
 			);
 			path = RNSensitiveInfo;
 			sourceTree = "<group>";
@@ -97,6 +98,7 @@
 				TargetAttributes = {
 					BF8FCF931BFFB184000FCD37 = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 1430;
 					};
 				};
 			};
@@ -123,7 +125,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF8FCF9A1BFFB184000FCD37 /* RNSensitiveInfo.m in Sources */,
+				370A42292A29DD1B004F942C /* RNSensitiveInfo.swift in Sources */,
+				37C28AC82A2FD3E200408F59 /* RNSensitiveInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,20 +238,27 @@
 		BF8FCF9E1BFFB184000FCD37 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../react-native/React/**";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNSensitiveInfo/RNSensitiveInfo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		BF8FCF9F1BFFB184000FCD37 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../react-native/React/**";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNSensitiveInfo/RNSensitiveInfo-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

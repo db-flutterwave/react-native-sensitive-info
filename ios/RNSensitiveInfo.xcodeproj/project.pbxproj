@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		370A42292A29DD1B004F942C /* RNSensitiveInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370A42282A29DD1B004F942C /* RNSensitiveInfo.swift */; };
+		37C28AC82A2FD3E200408F59 /* RNSensitiveInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C28AC72A2FD3E200408F59 /* RNSensitiveInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		370A42272A29DD1A004F942C /* RNSensitiveInfo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNSensitiveInfo-Bridging-Header.h"; sourceTree = "<group>"; };
 		370A42282A29DD1B004F942C /* RNSensitiveInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNSensitiveInfo.swift; sourceTree = "<group>"; };
+		37C28AC72A2FD3E200408F59 /* RNSensitiveInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNSensitiveInfo.m; sourceTree = "<group>"; };
 		BF8FCF941BFFB184000FCD37 /* libRNSensitiveInfo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNSensitiveInfo.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -60,6 +62,7 @@
 			children = (
 				370A42282A29DD1B004F942C /* RNSensitiveInfo.swift */,
 				370A42272A29DD1A004F942C /* RNSensitiveInfo-Bridging-Header.h */,
+				37C28AC72A2FD3E200408F59 /* RNSensitiveInfo.m */,
 			);
 			path = RNSensitiveInfo;
 			sourceTree = "<group>";
@@ -123,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				370A42292A29DD1B004F942C /* RNSensitiveInfo.swift in Sources */,
+				37C28AC82A2FD3E200408F59 /* RNSensitiveInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
