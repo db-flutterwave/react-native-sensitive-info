@@ -136,11 +136,7 @@ class RNSensitiveInfoModule(reactContext: ReactApplicationContext) :
 
     @ReactMethod
     fun hasEnrolledFingerprints(pm: Promise) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && mFingerprintManager != null) {
-            pm.resolve(mFingerprintManager!!.hasEnrolledFingerprints())
-        } else {
-            pm.resolve(false)
-        }
+        pm.resolve(hasSetupBiometricCredential())
     }
 
     @ReactMethod
