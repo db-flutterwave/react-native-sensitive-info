@@ -1,13 +1,42 @@
-import React, { useCallback, useState } from 'react';
-import { Alert, Button, SafeAreaView, Text } from 'react-native';
+import React, {useCallback, useState} from 'react';
+import {Alert, Button, Platform, SafeAreaView, Text} from 'react-native';
 import SInfo from 'react-native-sensitive-info';
 
 const Home: React.FC = () => {
+  const handleHasBiometricsSensor = useCallback(async () => {
+    try {
+      if (Platform.OS === 'android') {
+        const hasEnrolledFingerprints = await SInfo.hasEnrolledFingerprints();
+        Alert.alert(
+          'Fingerprint',
+          `Fingerprint is ${hasEnrolledFingerprints ? '' : 'not'} available.`,
+        );
+        return;
+      }
+      if (Platform.OS === 'ios') {
+        const isSensorAvailable = await SInfo.isSensorAvailable();
+        Alert.alert(
+          isSensorAvailable ? `${isSensorAvailable}` : 'No Sensor',
+          `${isSensorAvailable || 'Sensor'} is ${
+            isSensorAvailable ? '' : 'not'
+          } available.`,
+        );
+        return;
+      }
+      Alert.alert(
+        'Biometrics',
+        'No sensor was found, ensure you have biometrics set up on your device.',
+      );
+    } catch (error) {
+      Alert.alert('Error', (error as Error).message);
+    }
+  }, []);
+
   const handleAddUsingSetItemOnPress = useCallback(() => {
     SInfo.setItem('key1', 'value1', {
       sharedPreferencesName: 'exampleApp',
       keychainService: 'exampleApp',
-    }).catch((err) => {
+    }).catch(err => {
       Alert.alert('Error', err);
     });
   }, []);
@@ -87,7 +116,7 @@ const Home: React.FC = () => {
           'We need your permission to retrieve encrypted data',
       });
 
-      Alert.alert('Data stored', data);
+      Alert.alert('data retrieved', data);
     } catch (ex) {
       Alert.alert('Error', ex.message);
     }
@@ -117,7 +146,7 @@ const Home: React.FC = () => {
     )}\n`;
     dbgText += `getItem(key2): ${await SInfo.getItem('key2', options)}\n`;
     dbgText += `delItem(key2): ${await SInfo.deleteItem('key2', options)}\n`;
-    dbgText += `getAllItems():\n`;
+    dbgText += 'getAllItems():\n';
     const allItems = await SInfo.getAllItems(options);
     for (const key in allItems) {
       dbgText += ` - ${key} : ${allItems[key]}\n`;
@@ -127,7 +156,11 @@ const Home: React.FC = () => {
   runTest();
 
   return (
-    <SafeAreaView style={{ margin: 10 }}>
+    <SafeAreaView style={{margin: 10}}>
+      <Button
+        title="Has Biometrics Sensor"
+        onPress={handleHasBiometricsSensor}
+      />
       <Button
         title="Add item using setItem"
         onPress={handleAddUsingSetItemOnPress}
